@@ -11,7 +11,7 @@
                         <div class="col-md-6 col-custom">
                             <div class="modal-product-img">
                                 <a class="w-100" href="#">
-                                    {{-- <img class="w-100" src="{{ asset('asset/gambar/'.$product->image_product) }}" alt="Product"> --}}
+                                    {{-- <img class="w-100" src="{{ asset($product->image_product) }}" alt="Product"> --}}
                                 </a>
                             </div>
                         </div>

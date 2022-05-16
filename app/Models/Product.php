@@ -13,4 +13,9 @@ class Product extends Model
     {
         return $this->belongsTo(ProductCategory::class,'id_product_category','id');
     }
+
+    public function getImageAttribute()
+    {
+        return asset('storage/' . $this->image_product);
+    }
 }

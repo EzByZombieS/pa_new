@@ -209,10 +209,14 @@ function handle_save(tombol, form, url, method, title) {
                 success_toastr(response.message);
                 $(form)[0].reset();
                 setTimeout(function () {
-                    $(tombol).prop("disabled", false);
-                    $(tombol).html(title);
-                    main_content('content_list');
-                    load_list(1);
+                    if(response.redirect){
+                        location.href = response.redirect;
+                    }else{
+                        $(tombol).prop("disabled", false);
+                        $(tombol).html(title);
+                        main_content('content_list');
+                        load_list(1);
+                    }
                 }, 2000);
             } else {
                 error_toastr(response.message);

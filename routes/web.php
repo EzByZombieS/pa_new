@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\WebProfileController;
 use App\Http\Controllers\admin\ProductAdminController;
 use App\Http\Controllers\admin\ProductCategoryController;
 use App\Http\Controllers\web\CartController;
+use App\Http\Controllers\web\OrderController;
 use App\Http\Controllers\web\CriticsUserController;
 use App\Http\Controllers\web\RequestUserController;
 
@@ -37,6 +38,7 @@ Route::prefix('user/')->name('user.')->group(function(){
     Route::resource('critics', CriticsUserController::class);
     Route::resource('request', RequestUserController::class);
     Route::resource('cart', CartController::class);
+    Route::resource('orders', OrderController::class);
 });
 
 Route::prefix('admin/')->name('admin.')->group(function(){
@@ -50,6 +52,7 @@ Route::prefix('admin/')->name('admin.')->group(function(){
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('productcategory', ProductCategoryController::class);
     Route::resource('product', ProductAdminController::class);
+    Route::resource('cart', CartController::class);
     Route::resource('critics', CriticsController::class);
     Route::resource('webprofile', WebProfileController::class);
     Route::resource('order', OrderAdminController::class);

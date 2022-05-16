@@ -42,8 +42,8 @@
                                 <div class="single-product position-relative mb-30">
                                     <div class="product-image">
                                         <a class="d-block" href="{{ route('product.show',$item->id) }}">
-                                            <img src="{{ asset('asset/gambar/'.$item->image_product) }}" alt="" style="height: 300px" class="product-image-1 w-100">
-                                            <img src="{{ asset('asset/gambar/'.$item->image_product) }}" alt="" style="height: 300px" class="product-image-2 position-absolute w-100">
+                                            <img src="{{asset($item->image) }}" alt="" style="height: 300px" class="product-image-1 w-100">
+                                            <img src="{{asset($item->image) }}" alt="" style="height: 300px" class="product-image-2 position-absolute w-100">
                                         </a>
                                     </div>
                                     <div class="product-content">

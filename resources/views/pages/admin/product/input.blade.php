@@ -15,7 +15,7 @@
                             <select class="form-select mb-2" id="category" name="id_product_category">
                                 <option value="">Pilih Kategori</option>
                                 @foreach($product_category as $item)
-                                    <option value="{{$item->id}}" {{$data->id_product_category == $item->id ? 'selected' : ''}}>{{$item->name_product_category}}</option>
+                                    <option value="{{$item->id}}" {{$product->id_product_category == $item->id ? 'selected' : ''}}>{{$item->name_product_category}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -34,8 +34,8 @@
                                 <label class="form-label">Status</label>
                                 <select class="form-select mb-2" id="status" name="status_product">
                                     <option value="">Pilih Status</option>
-                                    <option value="Published" {{$data->status_product=="Published" ? 'selected' : ''}}>Tampil</option>
-                                    <option value="Inactive"  {{$data->status_product=="Inactive" ? 'selected' : ''}}>Simpan</option>
+                                    <option value="Published" {{$product->status_product=="Published" ? 'selected' : ''}}>Tampil</option>
+                                    <option value="Inactive"  {{$product->status_product=="Inactive" ? 'selected' : ''}}>Simpan</option>
                                 </select>
                                 <div class="text-muted fs-7">Pilih Status</div>
                             </div>
@@ -58,12 +58,12 @@
                                             <label class="required form-label">Nama Produk</label>
                                             <input type="text" name="name_product"
                                                 class="form-control mb-2" placeholder="Nama Produk"
-                                                value="{{ $data->name_product }}" />
+                                                value="{{ $product->name_product }}" />
                                             <div class="text-muted fs-7">Isi Nama Produk</div>
                                         </div>
                                         <div>
                                             <label class="form-label">Deskriptsi</label>
-                                            <textarea id="description_product" name="description_product">{!! $data->description_product !!}</textarea>
+                                            <textarea id="description_product" name="description_product">{!! $product->description_product !!}</textarea>
                                             <div class="text-muted fs-7">Isi Deskripsi</div>
                                         </div>
                                     </div>
@@ -73,7 +73,7 @@
                                         <div class="mb-10 fv-row">
                                             <label class="required form-label">Harga</label>
                                             <input type="text" id="price_product" name="price_product" class="form-control mb-2"
-                                                placeholder="1.000" value="{{ $data->price_product }}" />
+                                                placeholder="1.000" value="{{ $product->price_product }}" />
                                             <div class="text-muted fs-7">Tentukan Harga</div>
                                         </div>
                                     </div>
@@ -90,8 +90,8 @@
                     </div>
                     <div class="d-flex justify-content-end">
                         <button type="button" onclick="load_list(1);" class="btn btn-light me-5">Kembali</button>
-                        @if ($data->id)
-                        <button type="submit" id="kt_ecommerce_add_product_submit"  onclick="handle_upload('#kt_ecommerce_add_product_submit','#kt_ecommerce_add_product_form','{{route('admin.product.update',$data->id)}}','PATCH');" class="btn btn-primary">
+                        @if ($product->id)
+                        <button type="submit" id="kt_ecommerce_add_product_submit"  onclick="handle_upload('#kt_ecommerce_add_product_submit','#kt_ecommerce_add_product_form','{{route('admin.product.update',$product->id)}}','PATCH');" class="btn btn-primary">
                             <span class="indicator-label">Save Changes</span>
                             <span class="indicator-progress">Please wait...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span>

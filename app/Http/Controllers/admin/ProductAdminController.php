@@ -6,7 +6,9 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class ProductAdminController extends Controller
 {
@@ -58,7 +60,7 @@ class ProductAdminController extends Controller
     public function create()
     {
         $product_category = ProductCategory::get();
-        return view('pages.admin.product.input',['data'=>new Product,'product_category'=>$product_category]);
+        return view('pages.admin.product.input',['product'=>new Product,'product_category'=>$product_category]);
     }
 
     
@@ -110,24 +112,19 @@ class ProductAdminController extends Controller
             }
         }
 
-        $file = $request->file('image_product');
-        $namaFile = $file->getClientOriginalName();
-        $tujuanFile = 'asset/gambar';
-
-        $file->move($tujuanFile, $namaFile);
-
-        $data = new Product;
-        $data->id_product_category = $request->id_product_category;
-        $data->status_product = $request->status_product;
-        $data->name_product = $request->name_product;
-        $data->image_product = $namaFile;
-        $data->description_product = $request->description_product;
-        $data->price_product = $request->price_product;
-        $data->save();
+        $file = request()->file('image_product')->store('product');
+        $product = new Product;
+        $product->id_product_category = $request->id_product_category;
+        $product->status_product = $request->status_product;
+        $product->name_product = $request->name_product;
+        $product->image_product = $file;
+        $product->description_product = $request->description_product;
+        $product->price_product = Str::of($request->price_product)->replace('.', '') ?: 0;
+        $product->save();
 
         return response()->json([
             'alert' => 'success',
-            'message' => 'Product '. $data->name_product . ' tersimpan',
+            'message' => 'Product '. $product->name_product . ' tersimpan',
         ]);
     }
 
@@ -138,15 +135,14 @@ class ProductAdminController extends Controller
     }
 
     
-    public function edit($id)
+    public function edit(Product $product)
     {
-        $data = Product::find($id);
         $product_category = ProductCategory::get();
-        return view('pages.admin.product.input',['data'=>$data,'product_category'=>$product_category]);
+        return view('pages.admin.product.input',['product'=>$product,'product_category'=>$product_category]);
     }
 
     
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
         $validator = Validator::make($request->all(), [
             'id_product_category' => 'required',
@@ -194,40 +190,34 @@ class ProductAdminController extends Controller
         }
 
         if($request->hasfile('image_product')){
-            $file = $request->file('image_product');
-            $namaFile = $file->getClientOriginalName();
-            $tujuanFile = 'asset/gambar';
-    
-            $file->move($tujuanFile, $namaFile);
-            
-            $data = Product::find($id);
-            $data->id_product_category = $request->id_product_category;
-            $data->status_product = $request->status_product;
-            $data->name_product = $request->name_product;
-            $data->image_product = $namaFile;
-            $data->description_product =$request->description_product;
-            $data->price_product = $request->price_product;
-            $data->update();
+            Storage::delete($product->image_product);
+            $file = request()->file('image_product')->store('product');
+            $product->id_product_category = $request->id_product_category;
+            $product->status_product = $request->status_product;
+            $product->name_product = $request->name_product;
+            $product->image_product = $file;
+            $product->description_product =$request->description_product;
+            $product->price_product = $request->price_product;
+            $product->update();
         }else{        
-            $data = Product::find($id);
-            $data->id_product_category = $request->id_product_category;
-            $data->status_product = $request->status_product;
-            $data->name_product = $request->name_product;
-            $data->description_product = $request->description_product;
-            $data->price_product = $request->price_product;
-            $data->update();
+            $product->id_product_category = $request->id_product_category;
+            $product->status_product = $request->status_product;
+            $product->name_product = $request->name_product;
+            $product->description_product = $request->description_product;
+            $product->price_product = $request->price_product;
+            $product->update();
         }
 
         return response()->json([
             'alert' => 'success',
-            'message' => 'Product '. $data->name_product . ' berhasil diubah',
+            'message' => 'Product '. $product->name_product . ' berhasil diubah',
         ]);
     }
 
     
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        $product = Product::find($id);
+        Storage::delete($product->image_product);
         $product->delete();
         return response()->json([
             'alert'=>'success',

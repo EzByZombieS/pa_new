@@ -30,6 +30,7 @@
     <script src="{{asset('js/plugins.js')}}"></script>
     <script src="{{asset('js/plugin.js')}}"></script>
     <script src="{{asset('js/routes.js')}}"></script>
+    <script src="{{asset('js/confirm.js')}}"></script>
     <script src="{{asset('js/alert.js')}}"></script>
     <script src="{{asset('js/method.js')}}"></script>
 

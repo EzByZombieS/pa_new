@@ -25,6 +25,7 @@
     <!-- Nice Select CSS -->
     <link rel="stylesheet" href="{{ asset('flosun/css/plugins/nice-select.min.css') }}">
     <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{{ asset('css/toastr.css') }}">
     <link rel="stylesheet" href="{{ asset('flosun/css/plugins/magnific-popup.css') }}">
 	<link href="{{ asset('css/confirm.css') }}"  rel="stylesheet" type="text/css">
     <!-- Main Style CSS -->

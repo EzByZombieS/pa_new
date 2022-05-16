@@ -18,7 +18,7 @@
             <td>
                 <div class="d-flex align-items-center">
                     <span class="symbol symbol-50px">
-                        <span class="symbol-label" style="background-image:url({{ asset('asset/gambar/'.$item->image_product) }});"></span>
+                        <span class="symbol-label" style="background-image:url({{ $item->image }});"></span>
                     </span>
                     <div class="ms-5">
                         {{ $item->name_product }}
@@ -29,7 +29,7 @@
                 <span class="fw-bolder text-dark">{{ $item->product->name_product_category }}</span>
             </td>
             <td class="text-end pe-0">
-                <span class="fw-bolder text-dark">Rp. {{ $item->price_product }}</span>
+                <span class="fw-bolder text-dark">Rp. {{ number_format($item->price_product) }}</span>
             </td>
             <td class="text-end pe-0" data-order="{{ $item->status_product }}">
                 @if($item->status_product == 'Published')

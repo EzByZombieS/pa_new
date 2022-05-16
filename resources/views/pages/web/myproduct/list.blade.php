@@ -4,8 +4,8 @@
         <div class="product col-md-4 col-sm-6 sf-{{ $item->id_product_category }}">
             <div class="grid-inner">
                 <div class="product-image">
-                    <a href="{{ route('product.show',$item->id) }}"><img src="{{ asset('asset/gambar/'.$item->image_product) }}" height="350px" ></a>
-                    <a href="{{ route('product.show',$item->id) }}"><img src="{{ asset('asset/gambar/'.$item->image_product) }}" height="350px"></a>
+                    <a href="{{ route('product.show',$item->id) }}"><img src="{{ asset($item->image_product) }}" height="350px" ></a>
+                    <a href="{{ route('product.show',$item->id) }}"><img src="{{ asset($item->image_product) }}" height="350px"></a>
                 </div>
                 <div class="product-desc">
                     <div class="product-title"><h3><a href="{{ route('product.show',$item->id) }}">{{ $item->name_product }}</a></h3></div>
@@ -23,8 +23,8 @@
                 <div class="single-product position-relative mr-0 ml-0">
                     <div class="product-image">
                         <a class="d-block" href="{{ route('product.show',$item->id) }}">
-                            <img src="{{ asset('asset/gambar/'.$item->image_product) }}"  alt="" class="product-image-2 position-absolute w-100">
-                            <img src="{{ asset('asset/gambar/'.$item->image_product) }}" alt="" class="product-image-1 w-100">
+                            <img src="{{ asset($item->image) }}"  alt="" class="product-image-2 position-absolute w-100">
+                            <img src="{{ asset($item->image) }}" alt="" class="product-image-1 w-100">
                         </a>
                     </div>
                     <div class="product-content">
