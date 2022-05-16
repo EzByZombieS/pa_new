@@ -7,6 +7,7 @@ use App\Http\Controllers\user\AuthController;
 use App\Http\Controllers\admin\CriticsController;
 use App\Http\Controllers\web\ProfileWebController;
 use App\Http\Controllers\admin\AuthAdminController;
+use App\Http\Controllers\admin\OrderAdminController;
 use App\Http\Controllers\web\ProductUserController;
 use App\Http\Controllers\admin\WebProfileController;
 use App\Http\Controllers\admin\ProductAdminController;
@@ -51,6 +52,7 @@ Route::prefix('admin/')->name('admin.')->group(function(){
     Route::resource('product', ProductAdminController::class);
     Route::resource('critics', CriticsController::class);
     Route::resource('webprofile', WebProfileController::class);
+    Route::resource('order', OrderAdminController::class);
     Route::post('product/{product}/published',[ProductAdminController::class, 'published'])->name('product.published');
     Route::post('product/{product}/inactive',[ProductAdminController::class, 'inactive'])->name('product.inactive');
 });

@@ -20,3 +20,4 @@
 <script src="{{asset('js/plugin.js')}}"></script>
 <script src="{{asset('js/method.js')}}"></script>
 
+

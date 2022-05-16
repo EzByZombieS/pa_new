@@ -127,7 +127,7 @@
 											</div>
 											<div class="menu-item">
 												<a class="menu-link"
-													href="#">
+													href="{{ route('admin.order.index') }}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
