@@ -139,7 +139,7 @@
 								</div>
 							</div>
 							<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-								<a href="#"><span class="menu-link">
+								<a href="{{ route('admin.critics.index') }}"><span class="menu-link">
 									<span class="menu-icon">
 										<!--begin::Svg Icon | path: icons/duotune/communication/com011.svg-->
 										<span class="svg-icon svg-icon-2">
