@@ -1,159 +1,169 @@
-<x-team1Layout title="Profile">
-    <main class="nk-pages">
-        <section class="section section-team bg-light">
-            <div class="container">
-                <!-- Block @s -->
-                <div class="nk-block nk-block-team-featured team-featured">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5 mb-4 mb-lg-0">
-                            <div class="team-featured-photo tc-light">
-                                <img src="kantin.jpeg" alt="team">
-                                <h5 class="team-featured-info">Koperasi PI Del<span>Kontainer Lapangan Napitupulu</span></h5>
+<x-webLayout>
+<div class="breadcrumbs-area position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="breadcrumb-content position-relative section-content">
+                        <h3 class="title-3">Profil</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li>Profil</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Area End Here -->
+    <!-- About Area Start Here -->
+    <div class="about-area mt-no-text">
+        <div class="container custom-area">
+            <div class="row mb-30 align-items-center">
+                <div class="col-md-6 col-custom">
+                    <div class="collection-content">
+                        <div class="section-title text-left">
+                            <span class="section-title-1">Koperasi Serba Usaha</span>
+                            <h3 class="section-title-3 pb-0">PI Del</h3>
+                        </div>
+                        <div class="desc-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-custom">
+                    <!--Single Banner Area Start-->
+                    <div class="single-banner hover-style">
+                        <div class="banner-img">
+                            <a href="#">
+                                <img src="assets/images/about/1.jpg" alt="About Image">
+                                <div class="overlay-1"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--Single Banner Area End-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Team Member Area Start Here -->
+    <div class="team-member-wrapper mt-text-3">
+        <div class="container custom-area">
+            <div class="row">
+                <div class="col-lg-12 col-custom">
+                    <div class="section-title text-center">
+                        <span class="section-title-1">Ssusunan kerja</span>
+                        <h2 class="section-title-2">Koperasi PI Del Laguboti</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row ht-team-member-style-two pt-40">
+                <div class="col-lg-4 col-md-4 col-custom">
+                    <div class="grid-item">
+                        <div class="ht-team-member">
+                            <div class="team-image">
+                                <img class="img-fluid" src="assets/images/team/1.jpg" alt="">
+                                <div class="social-networks">
+                                    <div class="inner">
+                                        <a href="#"><i class="fa fa-whatsapp"></i>
+                                        </a>
+                                        <a href="#"><i class="fa fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-info text-center">
+                                <h5 class="name">Indra Tambunan </h5>
+                                <div class="position">Ketua</div>
                             </div>
                         </div>
-                        <div class="col-lg-7">
-                            <div class="team-featured-cont">
-                                <h6 class="title title-xs title-light">K O P E R A S I</h6>
-                                <h2 class="title title-lg title-dark">P I . D E L . 2022</h2>
-                                <p>Koperasi PI Del merupakan sebuah lembaga yang memegang utuh Gift Bouquet IT Del. untuk sekarang ini Koperasi PI Del sudah menjalankan berbagai jenis usaha dan membuka lapangan kerja untuk orang orang yang membutuhkan.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-custom">
+                    <div class="grid-item">
+                        <div class="ht-team-member">
+                            <div class="team-image">
+                                <img class="img-fluid" src="assets/images/team/2.jpg" alt="">
+                                <div class="social-networks">
+                                    <div class="inner">
+                                        <a href="#"><i class="fa fa-whatsapp"></i>
+                                        </a>
+                                        <a href="#"><i class="fa fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-info text-center">
+                                <h5 class="name">I Gde Eka Dirgayussa</h5>
+                                <div class="position">Sekretaris</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-custom">
+                    <div class="grid-item">
+                        <div class="ht-team-member">
+                            <div class="team-image">
+                                <img class="img-fluid" src="assets/images/team/3.jpg" alt="">
+                                <div class="social-networks">
+                                    <div class="inner">
+                                        <a href="#"><i class="fa fa-whatsapp"></i>
+                                        </a>
+                                        <a href="#"><i class="fa fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-info text-center">
+                                <h5 class="name">Indra LumbanTobing</h5>
+                                <div class="position">Bendahara</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-        </section>
-        <!-- // -->
-        <section class="section section-team bg-light-alt">
-
-            <div class="container">
-               
-                <div class="section-head text-center wide-auto">
-                    <h2 class="title title-lg title-dark">Struktur Anggota</h2>
-                </div><!-- .section-head @e -->
-                <!-- Block @s -->
-                <div class="nk-block nk-block-team-list team-list">
-                    <div class="row justify-content-center">
-                        <div class="col-md-3 col-6">
-                            <div class="team">
-                                <div class="team-photo team-photo-sm">
-                                    <img src="ketua.jpeg" alt="team">
-                                    <a href="#team-popup-1" class="team-show content-popup"></a>
-                                    <ul class="team-social">
-                                        <li><a href="#"><em class="contact-icon fas fa-phone"></em></a></li>
-                                        <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
-                                    </ul>
-                                </div>
-                                <h5 class="team-name title title-sm">Indra Tambunan</h5>
-                                <span class="team-position">Ketua</span>
-                            </div>
-                            <!-- Start .team-profile  -->
-                            <div id="team-popup-1" class="team-popup mfp-hide">
-                                <a title="Close" class="mfp-close">×</a>
-                                <div class="row align-items-start">
-                                    <div class="col-md-6">
-                                        <div class="team-photo">
-                                            <img src="ketua.jpeg" alt="team">
-                                        </div>
-                                    </div><!-- .col  -->
-                                    <div class="col-md-6">
-                                        <div class="team-popup-info pl-md-3">
-                                            <h3 class="team-name title title-lg pt-4">Indra Tambunan</h3>
-                                            <p class="team-position">Ketua Koperasi PI DEL</p>
-                                            <ul class="team-social mb-4">
-                                                <li><a href="#"><em class="contact-icon fas fa-phone"></em></a></li>
-                                                <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
-                                            </ul>
-                                            <p>Bapak Indra Tambunan merupakan  Lulusan</p>
-                                            <div class="progress-list">
-                                            </div>
-                                        </div>
-                                    </div><!-- .col  -->
-                                </div><!-- .row  -->
-                            </div><!-- .team-profile  -->
-                        </div><!-- .col -->
-                        <div class="col-md-3 col-6">
-                            <div class="team">
-                                <div class="team-photo team-photo-sm">
-                                    <img src="sekretaris.jpeg" alt="team">
-                                    <a href="#team-popup-2" class="team-show content-popup"></a>
-                                    <ul class="team-social">
-                                        <li><a href="#"><em class="contact-icon fas fa-phone"></em></a></li>
-                                        <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
-                                    </ul>
-                                </div>
-                                <h5 class="team-name title title-sm">I Gde Eka Dirgayussa</h5>
-                                <span class="team-position">Sekretaris</span>
-                            </div>
-                            <!-- Start .team-popup  -->
-                            <div id="team-popup-2" class="team-popup mfp-hide">
-                                <a title="Close" class="mfp-close">×</a>
-                                <div class="row align-items-start">
-                                    <div class="col-md-6">
-                                        <div class="team-photo">
-                                            <img src="images/team/b.jpg" alt="team">
-                                        </div>
-                                    </div><!-- .col  -->
-                                    <div class="col-md-6">
-                                        <div class="team-popup-info pl-md-3">
-                                            <h3 class="team-name title title-lg pt-4">I Gde Eka Dirgayussa</h3>
-                                            <p class="team-position">Sekretaris</p>
-                                            <ul class="team-social mb-4">
-                                                <li><a href="#"><em class="contact-icon fas fa-phone"></em></a></li>
-                                                <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
-                                            </ul>
-                                            <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
-                                        </div>
-                                    </div><!-- .col  -->
-                                </div><!-- .row  -->
-                            </div><!-- .team-profile  -->
-                        </div><!-- .col -->
-                    </div><!-- .row -->
+        </div>
+    </div>
+    <!-- Team Member Area End Here -->
+    <!-- Contact Us Area Start Here -->
+    <div class="contact-us-area mt-no-text">
+        <div class="container custom-area">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-custom">
+                    <div class="contact-info-item">
+                        <div class="con-info-icon">
+                            <i class="lnr lnr-map-marker"></i>
+                        </div>
+                        <div class="con-info-txt">
+                            <h4>Our Location</h4>
+                            <p>Kontainer Lapangan Npitupulu, Kampus Institut Teknologi Del Sitoluama, Laguboti</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Block @r -->
-            </div>
-        </section>
-        <!-- // -->
-        <section class="section section-team bg-light">
-            <div class="container">
-                <!-- Section Head @s -->
-                <div class="section-head text-center wide-auto">
-                    <h2 class="title title-lg title-dark">Admin Koperasi PI Del</h2>
-                </div><!-- .section-head @e -->
-                <!-- Block @s -->
-                <div class="nk-block nk-block-team-list team-list">
-                    <div class="row justify-content-center">
-                        <div class="col-md-3 col-6">
-                            <div class="team">
-                                <div class="team-photo team-photo-sm">
-                                    <img src="ketua.jpeg" alt="team">
-                                    <ul class="team-social">
-                                        <li><a href="#"><em class="contact-icon fas fa-phone"></em></a></li>
-                                        <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
-                                    </ul>
-                                </div>
-                                <h5 class="team-name title title-sm">Talenta</h5>
-                                <span class="team-position">Admin 1</span>
-                            </div>
-                            <!-- Start .team-profile  -->
-                        </div><!-- .col -->
-                        <div class="col-md-3 col-6">
-                            <div class="team">
-                                <div class="team-photo team-photo-sm">
-                                    <img src="sekretaris.jpeg" alt="team">
-                                    <ul class="team-social">
-                                        <li><a href="#"><em class="contact-icon fas fa-phone"></em></a></li>
-                                        <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
-                                    </ul>
-                                </div>
-                                <h5 class="team-name title title-sm">Maria</h5>
-                                <span class="team-position">Admin 2</span>
-                            </div>
-                        </div><!-- .col -->
-                    </div><!-- .row -->
+                <div class="col-lg-4 col-md-6 col-custom">
+                    <div class="contact-info-item">
+                        <div class="con-info-icon">
+                            <i class="lnr lnr-smartphone"></i>
+                        </div>
+                        <div class="con-info-txt">
+                            <h4>Contact us</h4>
+                            <p>Admin 1: 012 345 678<br>Admin 2: 123 456 789</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Block @r -->
+                <div class="col-lg-4 col-md-12 col-custom text-align-center">
+                    <div class="contact-info-item">
+                        <div class="con-info-icon">
+                            <i class="lnr lnr-envelope"></i>
+                        </div>
+                        <div class="con-info-txt">
+                            <h4>E-mail </h4>
+                            <p>giftbouquet@gmail.com <br> info@example.com</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
-</x-team1Layout>
+        </div>
+    </div>
+</x-webLayout>
