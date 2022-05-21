@@ -67,9 +67,13 @@
                                     </div>
                                 </div>
                             </li>
+                            @php
+                                $totalCart = \App\Models\Cart::where('id_user',Auth::user()->id)->count();
+                            @endphp
                             <li class="minicart-wrap">
                                 <a href="{{ route('user.cart.index') }}" class="minicart-btn toolbar-btn">
                                     <i class="fa fa-shopping-cart"></i>
+                                    <span class="cart-item_count">{{$totalCart}}</span>
                                 </a>
                             </li>
                             @endauth

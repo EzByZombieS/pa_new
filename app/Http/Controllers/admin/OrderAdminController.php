@@ -4,6 +4,9 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
 
 class OrderAdminController extends Controller
 {
@@ -12,8 +15,17 @@ class OrderAdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            $keywords = $request->keywords;
+            $collection = Order::join('orders_details', 'orders.id', '=', 'orders_details.id_order')
+            ->join('products', 'orders_details.id_product', '=', 'products.id')->join('users','users.id','=','orders.id_user')
+            ->where('users.name','LIKE','%'.$keywords.'%')
+            ->orWhere('products.name_product','LIKE','%'.$keywords.'%')
+            ->paginate(5);
+            return view('pages.admin.order.list',compact('collection'));
+        }
         return view('pages.admin.order.main');
     }
 

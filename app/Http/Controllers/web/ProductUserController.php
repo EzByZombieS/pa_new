@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\web;
 
 use App\Models\Product;
+use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
 class ProductUserController extends Controller
@@ -28,9 +30,17 @@ class ProductUserController extends Controller
         //
     }
     
-    public function store(Request $request)
+    public function store(Request $request,$product)
     {
-        //
+        Review::create([
+            'id_user'=>Auth::user()->id,
+            'id_order'=>$product,
+            'review'=>$request->review,
+        ]);
+        return response()->json([
+            'alert' => 'success',
+            'message' => 'Review Berhasil Ditambahkan'
+        ]);
     }
 
     

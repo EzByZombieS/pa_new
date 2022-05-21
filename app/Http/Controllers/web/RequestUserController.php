@@ -112,8 +112,15 @@ class RequestUserController extends Controller
                 ]);
             }
         }
-
-        return redirect()->to('https://api.whatsapp.com/send?phone=6282272944107');
+        $message = "Halo, nama saya " . $request->nama;
+        $body = "Saya membeli produk " . $request->kategori;
+        $order =  "dengan detail order " . $request->detailorder;
+        $notes = "dengan catatan ". $request->notes;
+        return response()->json([
+            'alert' => 'success',
+            'message' => 'Request berhasil dibuat',
+            'redirect' => "https://wa.me/6282272944107?text=$message%0A$body%0a$order%0a$notes"
+        ]);
     }
 
     /**

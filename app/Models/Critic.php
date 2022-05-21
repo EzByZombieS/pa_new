@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Critic extends Model
 {
-    use HasFactory;
+    public $table = "critics";
     public $timesetamps = false;
 }

@@ -71,12 +71,16 @@
                 </form>
                 <div class="row mt-no-text">
                     <div class="col-lg-12 col-custom">
+                        @php
+                            $review = \App\Models\Review::join('products','reviews.id_order','=','products.id')
+                                        ->where('reviews.id_order', '=', $product->id)->count();
+                        @endphp
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active text-uppercase" id="home-tab" data-toggle="tab" href="#connect-1" role="tab" aria-selected="true">Description</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-uppercase" id="profile-tab" data-toggle="tab" href="#connect-2" role="tab" aria-selected="false">Reviews</a>
+                                <a class="nav-link text-uppercase" id="profile-tab" data-toggle="tab" href="#connect-2" role="tab" aria-selected="false">Reviews ({{$review}})</a>
                             </li>
                         </ul>
                         <div class="tab-content mb-text" id="myTabContent">
@@ -89,72 +93,45 @@
                             </div>
                             <div class="tab-pane fade active show" id="connect-2" role="tabpanel" aria-labelledby="profile-tab">
                                 <!-- Start Single Content -->
+                                @php
+                                    $reviews = \App\Models\Review::join('products','reviews.id_order','=','products.id')
+                                                ->where('reviews.id_order', '=', $product->id)->get();
+                                @endphp
                                 <div class="product_tab_content  border p-3">
                                     <div class="review_address_inner">
                                         <!-- Start Single Review -->
+                                        @foreach($reviews as $item)     
                                         <div class="pro_review mb-5">
                                             <div class="review_thumb">
-                                                <img alt="review images" src="assets/images/review/1.jpg">
+                                                <img alt="review images" src="{{asset('img/admin/blank.png')}}" style="width:50%;">
                                             </div>
                                             <div class="review_details">
                                                 <div class="review_info mb-2">
-                                                    <div class="product-rating mb-2">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                    </div>
-                                                    <h5>Admin - <span> December 19, 2020</span></h5>
+                                                    <h5>{{$item->users->name}} - <span> {{$item->created_at}}</span></h5>
                                                 </div>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in viverra ex, vitae vestibulum arcu. Duis sollicitudin metus sed lorem commodo, eu dapibus libero interdum. Morbi convallis viverra erat, et aliquet orci congue vel. Integer in odio enim. Pellentesque in dignissim leo. Vivamus varius ex sit amet quam tincidunt iaculis.</p>
+                                                <p>{{$item->review}}</p>
                                             </div>
                                         </div>
+                                        @endforeach
                                         <!-- End Single Review -->
                                     </div>
-                                    <!-- Start RAting Area -->
-                                    {{-- <div class="rating_wrap">
-                                        <h5 class="rating-title-1 font-weight-bold mb-2">Add a review </h5>
-                                        <p class="mb-2">Your email address will not be published. Required fields are marked *</p>
-                                        <h6 class="rating-title-2 mb-2">Your Rating</h6>
-                                        <div class="rating_list mb-4">
-                                            <div class="review_info">
-                                                <div class="product-rating mb-3">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End RAting Area -->
+                                    @if(Auth::check())
                                     <div class="comments-area comments-reply-area">
                                         <div class="row">
                                             <div class="col-lg-12 col-custom">
-                                                <form action="#" class="comment-form-area">
-                                                    <div class="row comment-input">
-                                                        <div class="col-md-6 col-custom comment-form-author mb-3">
-                                                            <label>Name <span class="required">*</span></label>
-                                                            <input type="text" required="required" name="Name">
-                                                        </div>
-                                                        <div class="col-md-6 col-custom comment-form-emai mb-3">
-                                                            <label>Email <span class="required">*</span></label>
-                                                            <input type="text" required="required" name="email">
-                                                        </div>
-                                                    </div>
+                                                <form class="comment-form-area" id="kt_ecommerce_add_product_form">
                                                     <div class="comment-form-comment mb-3">
-                                                        <label>Comment</label>
-                                                        <textarea class="comment-notes" required="required"></textarea>
+                                                        <label>Tambahkan Review Anda</label>
+                                                        <textarea class="comment-notes" required="required" name="review"></textarea>
                                                     </div>
                                                     <div class="comment-form-submit">
-                                                        <button class="btn flosun-button secondary-btn rounded-0">Submit</button>
+                                                        <button class="btn flosun-button secondary-btn black-color rounded-0 w-100" type="submit" id="kt_ecommerce_add_product_submit"  onclick="handle_save('#kt_ecommerce_add_product_submit','#kt_ecommerce_add_product_form','{{route('review.store',$product->id)}}','POST');">Kirim</button>
                                                     </div>
                                                 </form>
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div> 
+                                    @endif
                                 </div>
                                 <!-- End Single Content -->
                             </div>

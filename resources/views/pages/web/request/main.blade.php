@@ -6,7 +6,7 @@
                     <div class="breadcrumb-content position-relative section-content">
                         <h3 class="title-3">Request Bouquet</h3>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="{{route('home')}}">Home</a></li>
                             <li>Bouquet Register</li>
                         </ul>
                     </div>
@@ -55,7 +55,7 @@
                                             <select class="myniceselect nice-select wide rounded-0" name="kategori">
                                                 <option>Pilih Kategori Bouquet</option>
                                                 @foreach($category as $value)
-                                                <option value="{{ $value->id }}">{{ $value->name_product_category}}</option>
+                                                <option value="{{ $value->name_product_category }}">{{ $value->name_product_category}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

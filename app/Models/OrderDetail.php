@@ -11,6 +11,6 @@ class OrderDetail extends Model
     public $timestamps = false;
     public function product()
     {
-        return $this->belongsTo(Product::class,'product_id','id');
+        return $this->belongsTo(Product::class,'id_product','id');
     }
 }

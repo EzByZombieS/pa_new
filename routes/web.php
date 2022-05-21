@@ -12,6 +12,8 @@ use App\Http\Controllers\web\ProductUserController;
 use App\Http\Controllers\admin\WebProfileController;
 use App\Http\Controllers\admin\ProductAdminController;
 use App\Http\Controllers\admin\ProductCategoryController;
+use App\Http\Controllers\admin\ProfileAdminController;
+use App\Http\Controllers\admin\ReviewController;
 use App\Http\Controllers\web\CartController;
 use App\Http\Controllers\web\OrderController;
 use App\Http\Controllers\web\CriticsUserController;
@@ -23,7 +25,7 @@ Route::resource('product', ProductUserController::class);
 Route::get('/profile', [ProfileWebController::class, 'index'])->name('profile');
 Route::get('/critics', [CriticsUserController::class, 'index'])->name('critics');
 Route::get('/request', [RequestUserController::class, 'index'])->name('request');
-
+Route::post('/product/{product}/review', [ProductUserController::class, 'store'])->name('review.store');
 
 
 Route::prefix('user/')->name('user.')->group(function(){
@@ -56,6 +58,8 @@ Route::prefix('admin/')->name('admin.')->group(function(){
     Route::resource('critics', CriticsController::class);
     Route::resource('webprofile', WebProfileController::class);
     Route::resource('order', OrderAdminController::class);
+    Route::resource('review', ReviewController::class);
+    Route::resource('webprofile', ProfileAdminController::class);
     Route::post('product/{product}/published',[ProductAdminController::class, 'published'])->name('product.published');
     Route::post('product/{product}/inactive',[ProductAdminController::class, 'inactive'])->name('product.inactive');
 });

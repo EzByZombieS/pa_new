@@ -6,7 +6,7 @@
                     <div class="breadcrumb-content position-relative section-content">
                         <h3 class="title-3">Profil</h3>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="{{route('home')}}">Home</a></li>
                             <li>Profil</li>
                         </ul>
                     </div>
@@ -59,69 +59,29 @@
                 </div>
             </div>
             <div class="row ht-team-member-style-two pt-40">
+                @foreach($collection as $item)
                 <div class="col-lg-4 col-md-4 col-custom">
                     <div class="grid-item">
                         <div class="ht-team-member">
                             <div class="team-image">
-                                <img class="img-fluid" src="assets/images/team/1.jpg" alt="">
+                                <img class="img-fluid" src="{{asset('storage/'.$item->image)}}" alt="">
                                 <div class="social-networks">
                                     <div class="inner">
-                                        <a href="#"><i class="fa fa-whatsapp"></i>
+                                        <a href="{{$item->phone}}"><i class="fa fa-whatsapp"></i>
                                         </a>
-                                        <a href="#"><i class="fa fa-instagram"></i>
+                                        <a href="{{$item->facebook}}"><i class="fa fa-facebook"></i>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="team-info text-center">
-                                <h5 class="name">Indra Tambunan </h5>
-                                <div class="position">Ketua</div>
+                                <h5 class="name">{{$item->name}}</h5>
+                                <div class="position">{{$item->key_meta}}</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-custom">
-                    <div class="grid-item">
-                        <div class="ht-team-member">
-                            <div class="team-image">
-                                <img class="img-fluid" src="assets/images/team/2.jpg" alt="">
-                                <div class="social-networks">
-                                    <div class="inner">
-                                        <a href="#"><i class="fa fa-whatsapp"></i>
-                                        </a>
-                                        <a href="#"><i class="fa fa-instagram"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-info text-center">
-                                <h5 class="name">I Gde Eka Dirgayussa</h5>
-                                <div class="position">Sekretaris</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-custom">
-                    <div class="grid-item">
-                        <div class="ht-team-member">
-                            <div class="team-image">
-                                <img class="img-fluid" src="assets/images/team/3.jpg" alt="">
-                                <div class="social-networks">
-                                    <div class="inner">
-                                        <a href="#"><i class="fa fa-whatsapp"></i>
-                                        </a>
-                                        <a href="#"><i class="fa fa-instagram"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-info text-center">
-                                <h5 class="name">Indra LumbanTobing</h5>
-                                <div class="position">Bendahara</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

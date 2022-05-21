@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class ProfileWebController extends Controller
@@ -10,7 +11,8 @@ class ProfileWebController extends Controller
     
     public function index()
     {
-        return view('pages.web.profile.main');
+        $collection = Profile::get();
+        return view('pages.web.profile.main',compact('collection'));
     }
 
     /**
