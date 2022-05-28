@@ -112,10 +112,10 @@ class RequestUserController extends Controller
                 ]);
             }
         }
-        $message = "Halo, nama saya " . $request->nama;
-        $body = "Saya membeli produk " . $request->kategori;
-        $order =  "dengan detail order " . $request->detailorder;
-        $notes = "dengan catatan ". $request->notes;
+        $message = "Halo, nama saya : " . $request->nama;
+        $body = "Saya membeli produk : " . $request->kategori;
+        $order =  "dengan detail order : " . $request->detailorder;
+        $notes = "dengan catatan : ". $request->notes;
         return response()->json([
             'alert' => 'success',
             'message' => 'Request berhasil dibuat',
