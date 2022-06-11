@@ -6,35 +6,27 @@
                     <div class="single-footer-widget m-0">
                         <div class="footer-logo">
                             <a href="index.html">
-                                <img src="assets/images/logo/logo-footer.png" alt="Logo Image">
+                                <img src="{{ asset('img/admin/logo.png') }}" width="50%" alt="Logo Image">
                             </a>
                         </div>
-                        <p class="desc-content">Lorem Khaled Ipsum is a major key to success. To be successful you’ve got to work hard you’ve got to make it.</p>
+                        <p class="desc-content">
+                            Del Gift Bouquet adalah tempat penjualaan dan pengiriman kebutuhan untuk bouquet di sekitaran kampus IT Del
+                        </p>
                         <div class="social-links">
                             <ul class="d-flex">
                                 <li>
-                                    <a class="rounded-circle" href="#" title="Facebook">
-                                        <i class="fa fa-facebook-f"></i>
+                                    <a class="rounded-circle" href="https://www.instagram.com/mesyaangeliqa/" title="Instagram">
+                                        <i class="fa fa-instagram"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="rounded-circle" href="#" title="Twitter">
-                                        <i class="fa fa-twitter"></i>
+                                    <a class="rounded-circle" href="https://wa.me/6282167157367?text=Hallo%20Admin!" title="Whatsapp">
+                                        <i class="fa fa-whatsapp"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="rounded-circle" href="#" title="Linkedin">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="rounded-circle" href="#" title="Youtube">
-                                        <i class="fa fa-youtube"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="rounded-circle" href="#" title="Vimeo">
-                                        <i class="fa fa-vimeo"></i>
+                                    <a class="rounded-circle" href="mailto:mesyahutagalung300@gmail.com" title="Email">
+                                        <i class="fa fa-envelope-o"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -42,46 +34,19 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-2 col-custom">
-                    <div class="single-footer-widget">
-                        <h2 class="widget-title">Information</h2>
-                        <ul class="widget-list">
-                            <li><a href="about-us.html">Our Company</a></li>
-                            <li><a href="contact-us.html">Contact Us</a></li>
-                            <li><a href="about-us.html">Our Services</a></li>
-                            <li><a href="about-us.html">Why We?</a></li>
-                            <li><a href="about-us.html">Careers</a></li>
-                        </ul>
-                    </div>
+                    
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-2 col-custom">
-                    <div class="single-footer-widget">
-                        <h2 class="widget-title">Quicklink</h2>
-                        <ul class="widget-list">
-                            <li><a href="about-us.html">About</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="contact-us.html">Contact</a></li>
-                        </ul>
-                    </div>
+                    
                 </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-2 col-custom">
-                    <div class="single-footer-widget">
-                        <h2 class="widget-title">Support</h2>
-                        <ul class="widget-list">
-                            <li><a href="contact-us.html">Online Support</a></li>
-                            <li><a href="contact-us.html">Shipping Policy</a></li>
-                            <li><a href="contact-us.html">Return Policy</a></li>
-                            <li><a href="contact-us.html">Privacy Policy</a></li>
-                            <li><a href="contact-us.html">Terms of Service</a></li>
-                        </ul>
-                    </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-1 col-custom">
+                    
                 </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-custom">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-custom pt-5">
                     <div class="single-footer-widget">
                         <h2 class="widget-title">See Information</h2>
                         <div class="widget-body">
-                            <address>123, ABC, Road ##, Main City, Your address goes here.<br>Phone: 01234 567 890<br>Email: https://example.com</address>
+                            <address>Phone : 0821-6715-7367 <br> Email : mesyahutagalung300@gmail.com <br> Kontainer Lapangan Napitupulu</address>
                         </div>
                     </div>
                 </div>
@@ -92,8 +57,8 @@
         <div class="container custom-area">
             <div class="row">
                 <div class="col-12 text-center col-custom">
-                    <div class="copyright-content">
-                        <p>Copyright © 2020 <a href="https://hasthemes.com/" title="https://hasthemes.com/">HasThemes</a> | Built with&nbsp;<strong>FloSun</strong>&nbsp;by <a href="https://hasthemes.com/" title="https://hasthemes.com/">HasThemes</a>.</p>
+                    <div class="copyright-content ">
+                        <p>Copyright © 2022 | Built with &nbsp;<strong>PA-14</strong>&nbsp;by <a href="{{ route('user.aboutus') }}" title="About Us">Team</a>.</p>
                     </div>
                 </div>
             </div>

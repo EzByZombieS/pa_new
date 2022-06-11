@@ -16,10 +16,10 @@ class CreateReviewTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_order');
+            $table->unsignedBigInteger('id_product');
             $table->longtext('review');
-            $table->foreign('id_user')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('id_order')->references('id')->on('orders')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('id_user')->references('id')->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+            $table->foreign('id_product')->references('id')->on('products')->onUpdate('NO ACTION')->onDelete('NO ACTION');
             $table->timestamps();
         });
     }

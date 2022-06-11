@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\web\HomeController;
 use App\Http\Controllers\DashboardController;
@@ -26,6 +27,7 @@ Route::get('/profile', [ProfileWebController::class, 'index'])->name('profile');
 Route::get('/critics', [CriticsUserController::class, 'index'])->name('critics');
 Route::get('/request', [RequestUserController::class, 'index'])->name('request');
 Route::post('/product/{product}/review', [ProductUserController::class, 'store'])->name('review.store');
+ROute::get('/aboutus', [AboutUsController::class, 'index'])->name('user.aboutus');
 
 
 Route::prefix('user/')->name('user.')->group(function(){
@@ -62,4 +64,5 @@ Route::prefix('admin/')->name('admin.')->group(function(){
     Route::resource('webprofile', ProfileAdminController::class);
     Route::post('product/{product}/published',[ProductAdminController::class, 'published'])->name('product.published');
     Route::post('product/{product}/inactive',[ProductAdminController::class, 'inactive'])->name('product.inactive');
+    Route::post('order/{order}/selesai', [OrderAdminController::class, 'selesai'])->name('order.selesai');
 });

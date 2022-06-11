@@ -58,14 +58,6 @@
                     <h3>Cart Totals</h3>
                     <div class="table-responsive">
                         <table class="table">
-                            {{-- <tr>
-                                <td>Sub Total</td>
-                                <td>$230</td>
-                            </tr>
-                            <tr>
-                                <td>Shipping</td>
-                                <td>$70</td>
-                            </tr> --}}
                             <tr class="total">
                                 <td>Total</td>
                                 <td class="total-amount">{{ number_format($count)}}</td>
@@ -73,7 +65,7 @@
                         </table>
                     </div>
                 </div>
-                <button class="btn flosun-button secondary-btn black-color rounded-0 w-100" type="submit" id="kt_ecommerce_add_product_submit"  onclick="handle_save('#kt_ecommerce_add_product_submit','#form_order','{{ route('user.orders.store')}}','POST');">Proccess</button>
+                <button class="btn flosun-button secondary-btn black-color rounded-0 w-100" type="submit" id="kt_ecommerce_add_product_submit"  onclick="handle_save('#kt_ecommerce_add_product_submit','#form_order','{{ route('user.orders.store')}}','POST');">Order Now!</button>
             </div>
         </div>
     </div>

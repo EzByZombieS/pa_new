@@ -64,6 +64,7 @@ class CartController extends Controller
             'alert'=>'success',
             'message'=>'Produk berhasil ditambahkan'
         ]);
+        
     }
 
     public function show(Cart $cart)

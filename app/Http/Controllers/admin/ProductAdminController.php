@@ -20,35 +20,38 @@ class ProductAdminController extends Controller
             $category = $request->category;
             $status = $request->status;
             if (!$keywords or !$category or !$status) {
-                $collection = Product::paginate(10);
+                $collection = Product::orderby('id', 'desc')->paginate(20);
             }
             if ($keywords and !$category or !$status) {
-                $collection = Product::where('name_product', 'like', '%' . $keywords . '%')->paginate(10);
+                $collection = Product::where('name_product', 'like', '%' . $keywords . '%')->orderby('id', 'desc')->paginate(20);
             }
             if (!$keywords and $category and !$status) {
-                $collection = Product::where('id_product_category', $category)->paginate(10);
+                $collection = Product::where('id_product_category', $category)->orderby('id', 'desc')->paginate(20);
             }
             if (!$keywords and !$category and $status) {
-                $collection = Product::where('status_product', $status)->paginate(10);
+                $collection = Product::where('status_product', $status)->orderby('id', 'desc')->paginate(20);
             }
             if (!$keywords and !$category and $status=="all") {
-                $collection = Product::paginate(10);
+                $collection = Product::orderby('id', 'desc')->paginate(20);
             }
             if (!$keywords and $category and $status) {
                 $collection = Product::where('id_product_category', $category)
                     ->where('status_product', $status)
-                    ->paginate(10);
+                    ->orderby('id', 'desc')
+                    ->paginate(20);
             }     
             if ($keywords and $category and !$status) {
                 $collection = Product::where('name_product', 'like', '%' . $keywords . '%')
                     ->where('id_product_category', $category)
-                    ->paginate(10);
+                    ->orderby('id', 'desc')
+                    ->paginate(20);
             }            
             if ($keywords and $category and $status) {
                 $collection = Product::where('name_product', 'like', '%' . $keywords . '%')
                     ->where('id_product_category', $category)
                     ->where('status_product', $status)
-                    ->paginate(10);
+                    ->orderby('id', 'desc')
+                    ->paginate(20);
             }            
             return view('pages.admin.product.list',compact('collection'));
         }

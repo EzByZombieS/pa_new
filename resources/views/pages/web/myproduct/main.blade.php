@@ -34,7 +34,7 @@
                                 <form class="d-flex flex-column w-100" id="content_filter">
                                     <div class="form-group">
                                         <select class="form-control nice-select w-100" onchange="load_list();" name="category">
-                                            <option selected value="all">Pilih Kategori</option>
+                                            <option selected value="all">All Category</option>
                                             @foreach ($categories as $item)
                                             <option value="{{ $item->id }}">{{ $item->name_product_category }}</option>
                                             @endforeach

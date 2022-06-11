@@ -5,16 +5,15 @@
                 <div class="intro11-section swiper-slide slide-4 slide-bg-2 bg-position">
                     <div class="intro11-content-2 text-center">
                         <h1 class="different-title">Welcome</h1>
-                        <h2 class="title">2020 Flower Trend</h2>
-                        <a href="product-details.html" class="btn flosun-button secondary-btn theme-color rounded-0">Shop Now</a>
+                        <h2 class="title">2022 Bouquet Trend</h2>
+                        <a href="{{ route('product.index') }}" class="btn flosun-button secondary-btn theme-color rounded-0">Shop Now</a>
                     </div>
                 </div>
                 <div class="intro11-section swiper-slide slide-3 slide-bg-2 bg-position">
                     <div class="intro11-content text-left">
-                        <h3 class="title-slider text-uppercase">Top Trend</h3>
-                        <h2 class="title">Flowers and Candle <br> Birthday Gift</h2>
-                        <p class="desc-content">Lorem ipsum dolor sit amet, pri autem nemore bonorum te. Autem fierent ullamcorper ius no, nec ea quodsi invenire. </p>
-                        <a href="product-details.html" class="btn flosun-button secondary-btn rounded-0">Shop Now</a>
+                        <h3 class="title-slider text-uppercase">Top Trend Bouquet</h3>
+                        <h2 class="title">Flowers and Doll <br> Birthday Gift</h2>
+                        <a href="{{ route('product.index') }}" class="btn flosun-button secondary-btn rounded-0">Shop Now</a>
                     </div>
                 </div>
             </div>

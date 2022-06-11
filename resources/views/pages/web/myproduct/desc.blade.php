@@ -58,10 +58,10 @@
                                     </div>
                                     <div class="add-to_cart">
                                         @auth
-                                            <a class="btn flosun-button secondary-btn secondary-border rounded-0" id="buttton_order" onclick="add_cart('#buttton_order','#form_order','{{route('user.cart.store')}}','Add to Cart','{{$product->id}}');" href="javascript:;">Pesan Sekarang!</a>
+                                            <a class="btn flosun-button secondary-btn secondary-border rounded-0" id="buttton_order" onclick="add_cart('#buttton_order','#form_order','{{route('user.cart.store')}}','Add to Cart','{{$product->id}}');" href="javascript:;">Tambah Produk!</a>
                                         @endauth
                                         @guest
-                                            <a class="btn flosun-button secondary-btn secondary-border rounded-0" id="buttton_order"  href="{{route('user.auth.index')}}">Pesan Sekarang!</a>
+                                            <a class="btn flosun-button secondary-btn secondary-border rounded-0" id="buttton_order"  href="{{route('user.auth.index')}}">Tambah Produk!</a>
                                         @endguest
                                     </div>
                                 </div>
@@ -72,8 +72,8 @@
                 <div class="row mt-no-text">
                     <div class="col-lg-12 col-custom">
                         @php
-                            $review = \App\Models\Review::join('products','reviews.id_order','=','products.id')
-                                        ->where('reviews.id_order', '=', $product->id)->count();
+                            $review = \App\Models\Review::join('products','reviews.id_product','=','products.id')
+                                        ->where('reviews.id_product', '=', $product->id)->count();
                         @endphp
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
@@ -91,20 +91,16 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="tab-pane fade active show" id="connect-2" role="tabpanel" aria-labelledby="profile-tab">
-                                <!-- Start Single Content -->
+                            <div class="tab-pane fade show" id="connect-2" role="tabpanel" aria-labelledby="profile-tab">
                                 @php
-                                    $reviews = \App\Models\Review::join('products','reviews.id_order','=','products.id')
-                                                ->where('reviews.id_order', '=', $product->id)->get();
+                                    $reviews = \App\Models\Review::join('products','reviews.id_product','=','products.id')
+                                                ->where('reviews.id_product', '=', $product->id)->get();
                                 @endphp
                                 <div class="product_tab_content  border p-3">
                                     <div class="review_address_inner">
-                                        <!-- Start Single Review -->
                                         @foreach($reviews as $item)     
                                         <div class="pro_review mb-5">
-                                            <div class="review_thumb">
-                                                <img alt="review images" src="{{asset('img/admin/blank.png')}}" style="width:50%;">
-                                            </div>
+                                                <img alt="review images" src="{{asset('img/admin/blank.png')}}" style="width:10%;">
                                             <div class="review_details">
                                                 <div class="review_info mb-2">
                                                     <h5>{{$item->users->name}} - <span> {{$item->created_at}}</span></h5>
@@ -113,7 +109,6 @@
                                             </div>
                                         </div>
                                         @endforeach
-                                        <!-- End Single Review -->
                                     </div>
                                     @if(Auth::check())
                                     <div class="comments-area comments-reply-area">
@@ -133,7 +128,6 @@
                                     </div> 
                                     @endif
                                 </div>
-                                <!-- End Single Content -->
                             </div>
                         </div>
                     </div>

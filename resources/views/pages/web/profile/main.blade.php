@@ -35,7 +35,7 @@
                     <div class="single-banner hover-style">
                         <div class="banner-img">
                             <a href="#">
-                                <img src="assets/images/about/1.jpg" alt="About Image">
+                                <img src="{{ asset('img/12.jpeg') }}" alt="About Image">
                                 <div class="overlay-1"></div>
                             </a>
                         </div>
@@ -58,18 +58,20 @@
                     </div>
                 </div>
             </div>
-            <div class="row ht-team-member-style-two pt-40">
+            <div class="row ht-team-member-style-two align-content-center align-items-center align-self-center pt-40 ">
                 @foreach($collection as $item)
                 <div class="col-lg-4 col-md-4 col-custom">
-                    <div class="grid-item">
+                    <div class="grid-item ">
                         <div class="ht-team-member">
                             <div class="team-image">
-                                <img class="img-fluid" src="{{asset('storage/'.$item->image)}}" alt="">
+                                <div class="banner-img">
+                                    <img class="img-fluid" src="{{asset('storage/'.$item->image)}}" alt="">
+                                </div>
                                 <div class="social-networks">
                                     <div class="inner">
-                                        <a href="{{$item->phone}}"><i class="fa fa-whatsapp"></i>
+                                        <a href="https://wa.me/{{$item->phone}}" title="{{$item->phone}}" target="blank"><i class="fa fa-whatsapp"></i>
                                         </a>
-                                        <a href="{{$item->facebook}}"><i class="fa fa-facebook"></i>
+                                        <a href="https://www.isntagram.com/{{$item->facebook}}" target="blank"><i class="fa fa-instagram"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -77,6 +79,7 @@
                             <div class="team-info text-center">
                                 <h5 class="name">{{$item->name}}</h5>
                                 <div class="position">{{$item->key_meta}}</div>
+                                <div class="position">"{{$item->description}}"</div>
                             </div>
                         </div>
                     </div>
@@ -119,7 +122,7 @@
                         </div>
                         <div class="con-info-txt">
                             <h4>E-mail </h4>
-                            <p>giftbouquet@gmail.com <br> info@example.com</p>
+                            <p>samysiahaaan@gmail.com <br> mesyahutagalung300@gmail.com</p>
                         </div>
                     </div>
                 </div>

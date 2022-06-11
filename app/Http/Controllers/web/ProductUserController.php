@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\web;
 
-use App\Models\Product;
 use App\Models\Review;
+use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class ProductUserController extends Controller
 {
@@ -15,9 +16,9 @@ class ProductUserController extends Controller
     {   
         if ($request->ajax()) {
             if($request->category != 'all'){
-                $collection = Product::where('status_product','=','Published')->where('id_product_category',$request->category)->paginate(12);
+                $collection = Product::where('status_product','=','Published')->where('id_product_category',$request->category)->orderby('id', 'desc')->paginate(12);
             }else{
-                $collection = Product::where('status_product','=','Published')->paginate(12);
+                $collection = Product::where('status_product','=','Published')->orderby('id', 'desc')->paginate(12);
             }
             return view('pages.web.myproduct.list',compact('collection'));
         }
@@ -32,11 +33,32 @@ class ProductUserController extends Controller
     
     public function store(Request $request,$product)
     {
-        Review::create([
-            'id_user'=>Auth::user()->id,
-            'id_order'=>$product,
-            'review'=>$request->review,
+        
+        $validator = Validator::make($request->all(), [
+            'review' => 'required',
         ]);
+        if($validator->fails()){
+            $errors = $validator->errors();
+            if($errors->has('review')){
+                return response()->json([
+                    'alert'=>'error',
+                    'message'=>$errors->first('review')
+                ]);
+            }
+        }
+        // Review::save([
+        //     'id_user'=>Auth::user()->id,
+        //     'id_order'=>$product,
+        //     'review'=>$request->review,
+        //     'created_at'=>now(),
+        // ]);
+        $review = new Review();
+        $review->id_user = Auth::user()->id;
+        $review->id_product = $product;
+        $review->review = $request->review;
+        $review->created_at = now();
+        // dd($review);
+        $review->save();
         return response()->json([
             'alert' => 'success',
             'message' => 'Review Berhasil Ditambahkan'

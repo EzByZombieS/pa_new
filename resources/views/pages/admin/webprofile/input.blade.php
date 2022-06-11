@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="card-body pt-0">
                                         <div class="mb-10 fv-row">
-                                            <label class="required form-label">Deskripsi</label>
+                                            <label class="required form-label">Motifasi</label>
                                             <input type="text" name="description" class="form-control mb-2" placeholder="Masukkan Deskripsi Anda" value="{{ $data->description }}" />
                                         </div>
                                     </div>
@@ -49,12 +49,14 @@
                                         <div class="mb-10 fv-row">
                                             <label class="required form-label">No Telepon</label>
                                             <input type="text" name="phone" class="form-control mb-2" placeholder="Masukkan Nama No Telepon Anda" value="{{ $data->phone }}" />
+                                            <span class="required" style="color: black"></span><span>(6281234567)</span>
                                         </div>
                                     </div>
                                     <div class="card-body pt-0">
                                         <div class="mb-10 fv-row">
-                                            <label class="required form-label">Facebook</label>
-                                            <input type="text" name="facebook" class="form-control mb-2" placeholder="Masukkan Nama Facebook Anda" value="{{ $data->facebook }}" />
+                                            <label class="required form-label">ID Instagram</label>
+                                            <input type="text" name="facebook" class="form-control mb-2" placeholder="Masukkan Id Instagram Anda" value="{{ $data->facebook }}" />
+                                            <span class="required" style="color: black"></span><span>d3tidel_2021</span>
                                         </div>
                                     </div>
                                 </div>

@@ -36,11 +36,7 @@ class DashboardController extends Controller
         $user_percent = User::where('role','=','user')->where(User::raw("(date(created_at))"),'!=', date('Y-m-d'))->count();
         $order_percent = Order::where(Order::raw("(date(created_at))"),'!=', date('Y-m-d'))->count();
         $critic_percent = Critic::where(Critic::raw("(date(created_at))"),'!=', date('Y-m-d'))->count();
-        $increase_product = ($product_percent / $product) * 100;
-        $increase_order = ($order_percent / $order) * 100;
-        $increase_critic = ($critic_percent / $critic) * 100;
-        $increase_user = ($user_percent / $user) * 100;
-        return view('pages.admin.dashboard.main',compact('product','order','user','critic','increase_product','increase_order','increase_critic','increase_user'));
+        return view('pages.admin.dashboard.main',compact('product','order','user','critic'));
     }
 
     public function create()

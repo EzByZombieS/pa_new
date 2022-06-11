@@ -23,8 +23,8 @@
                 <div class="single-product position-relative mr-0 ml-0">
                     <div class="product-image">
                         <a class="d-block" href="{{ route('product.show',$item->id) }}">
-                            <img src="{{ asset($item->image) }}"  alt="" class="product-image-2 position-absolute w-100">
-                            <img src="{{ asset($item->image) }}" alt="" class="product-image-1 w-100">
+                            <img src="{{ asset($item->image) }}"  alt="" class="product-image-2 position-absolute " height="350px">
+                            <img src="{{ asset($item->image) }}" alt="" class="product-image-1 " height="350px">
                         </a>
                     </div>
                     <div class="product-content">
@@ -45,7 +45,7 @@
                         </div>
                         <p class="desc-content">{!! $item->description_product !!}</p>
                         <div class="button-listview">
-                            <a href="#" class="btn flosun-button secondary-btn rounded-0"> Pesan Sekarang! </a>
+                            <a href="{{ route('product.show',$item->id) }}" class="btn flosun-button secondary-btn rounded-0"> Pesan Sekarang! </a>
                         </div>
                     </div>
                 </div>

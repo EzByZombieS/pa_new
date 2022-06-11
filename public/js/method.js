@@ -209,9 +209,9 @@ function handle_save(tombol, form, url, method, title) {
                 success_toastr(response.message);
                 $(form)[0].reset();
                 setTimeout(function () {
-                    if(response.redirect){
+                    if (response.redirect) {
                         location.href = response.redirect;
-                    }else{
+                    } else {
                         $(tombol).prop("disabled", false);
                         $(tombol).html(title);
                         main_content('content_list');
@@ -228,6 +228,8 @@ function handle_save(tombol, form, url, method, title) {
         },
     });
 }
+
+
 
 function handle_save_modal(tombol, form, url, modal, title) {
     $(tombol).submit(function () {

@@ -14,7 +14,8 @@ class ReviewController extends Controller
     {
         if ($request->ajax()) {
             $keywords = $request->keywords;
-            $collection = Review::join('products','reviews.id_order','=','products.id')
+            $collection = Review::select('users.name', 'products.name_product', 'reviews.review', 'reviews.id')
+            ->join('products','reviews.id_user','=','products.id')
             ->join('users','users.id','=','reviews.id_user')
             ->where('users.name','LIKE','%'.$keywords.'%')
             ->orwhere('products.name_product','LIKE','%'.$keywords.'%')
