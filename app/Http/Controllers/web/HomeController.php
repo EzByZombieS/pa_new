@@ -11,8 +11,9 @@ class HomeController extends Controller
     
     public function index()
     {
-        $collection = Product::where('status_product','=','Published')->orderby('id','desc')->paginate(8);
-        return view('pages.web.home.main',compact('collection'));
+        $collection = Product::where('status_product','=','Published')->orderby('id','desc')->paginate(10);
+        $sale = Product::where('status_product','=','Published')->orderby('id','asc')->paginate(10);
+        return view('pages.web.home.main',compact('collection','sale'));
     }
 
     

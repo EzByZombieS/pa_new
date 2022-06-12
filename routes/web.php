@@ -65,4 +65,6 @@ Route::prefix('admin/')->name('admin.')->group(function(){
     Route::post('product/{product}/published',[ProductAdminController::class, 'published'])->name('product.published');
     Route::post('product/{product}/inactive',[ProductAdminController::class, 'inactive'])->name('product.inactive');
     Route::post('order/{order}/selesai', [OrderAdminController::class, 'selesai'])->name('order.selesai');
+    Route::post('order/{order}/batal', [OrderAdminController::class, 'batal'])->name('order.batal');
+    Route::get('order/{order}', [OrderAdminController::class, 'kirim'])->name('order.kirim');
 });

@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderAdmin;
 use App\Models\OrderDetail;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -28,7 +29,9 @@ class OrderController extends Controller
     
     public function store(Request $request)
     {
-        $random_string = Auth::user()->id.md5(microtime()).Str::of(Auth::user()->name)->replace(' ', '') ?: 0;
+        $huruf = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $random_huruf = Str::random(7, $huruf);
+        $random_string = Auth::user()->id.$random_huruf.Str::of(Auth::user()->name)->replace(' ', '') ?: 0;
         $detail = Cart::where('id_user', Auth::user()->id)->get();
         $order = new Order;
         $order->id_user = Auth::user()->id;
@@ -54,7 +57,7 @@ class OrderController extends Controller
         return response()->json([
             'alert' => 'success',
             'message' => 'Order berhasil dibuat',
-            'redirect' => "https://wa.me/6283867525611?text=$message"
+            'redirect' => "https://wa.me/6282272944107?text=$message"
         ]);
     }
 

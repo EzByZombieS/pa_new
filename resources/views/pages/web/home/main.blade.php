@@ -28,7 +28,7 @@
                 <div class="col-12 col-custom">
                     <div class="section-title text-center mb-30">
                         <span class="section-title-1">Wonderful gift</span>
-                        <h3 class="section-title-3">Our Product</h3>
+                        <h3 class="section-title-3">New Product</h3>
                     </div>
                 </div>
             </div>
@@ -44,6 +44,52 @@
                                             <img src="{{asset($item->image) }}" alt="" style="height: 300px" class="product-image-1 w-100">
                                             <img src="{{asset($item->image) }}" alt="" style="height: 300px" class="product-image-2 position-absolute w-100">
                                         </a>
+                                        <span class="onsale">New!</span>
+                                    </div>
+                                    <div class="product-content">
+                                        <div class="product-title">
+                                            <h4 class="title-2"> <a href="{{ route('product.show',$item->id) }}">{{ $item->name_product }}</a></h4>
+                                        </div>
+                                        <div class="price-box">
+											<span class="regular-price ">Rp. {{ $item->price_product }}</span>
+                                        </div>
+                                        <a href="{{ route('product.show',$item->id) }}" title="Quick View" class="btn product-cart">View...</a>
+                                    </div>
+                                </div>
+                            </div>
+							@endforeach
+                        </div>
+                        <div class="swiper-pagination default-pagination"></div>
+						<br>
+						<div class="section-title text-center mb-30"><a href="{{ route('product.index') }}">See More . . .</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-area mt-text-2 mb-text-3">
+        <div class="container custom-area-2 overflow-hidden">
+            <div class="row">
+                <div class="col-12 col-custom">
+                    <div class="section-title text-center mb-30">
+                        <span class="section-title-1">Wonderful gift</span>
+                        <h3 class="section-title-3">Best Product</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row product-row">
+                <div class="col-12 col-custom">
+                    <div class="product-slider swiper-container anime-element-multi">
+                        <div class="swiper-wrapper">
+							@foreach ($sale as $item)
+                            <div class="single-item swiper-slide">
+                                <div class="single-product position-relative mb-30">
+                                    <div class="product-image">
+                                        <a class="d-block" href="{{ route('product.show',$item->id) }}">
+                                            <img src="{{asset($item->image) }}" alt="" style="height: 300px" class="product-image-1 w-100">
+                                            <img src="{{asset($item->image) }}" alt="" style="height: 300px" class="product-image-2 position-absolute w-100">
+                                        </a>
+                                        <span class="onsale" style="font-size: 75%">Flash Sale!</span>
                                     </div>
                                     <div class="product-content">
                                         <div class="product-title">
