@@ -83,13 +83,14 @@ class OrderAdminController extends Controller
         ->get();
         $pdf = PDF::loadView('pages.admin.order.pdf', compact('show'));
         
-        Storage::put('public/pdf/'.'Order'.$id.'.pdf', $pdf->output());
-        $url = 'https://tespagi.test/storage/public/pdf/'.'Order'.$id.'.pdf';
+        Storage::put('public/pdf/'.$show[0]->order_number.$id.'.pdf', $pdf->output());
+        $url = 'https://tespagi.test/storage/public/pdf/'.$show[0]->order_number.$id.'.pdf ';
 
         
         
-        $phones = 82272944107;
-        return redirect()->to('https://wa.me/62'.$phones.'?text=Pesanan Anda Telah Selesai!%0ABerikut invoice Pesanan Anda: '.$url.'');
+        
+        $phones = 81362926803;
+        return redirect()->to('https://wa.me/62'.$phones.'?text=Pesanan Anda Telah Selesai!%0ABerikut Order Detail Pesanan Anda:%0A'.$url.'%0AAnda dapat mengambilnya segera!%0ATerimakasih ');
         
         // return response()->json([
         //     'alert'=>'success',

@@ -47,6 +47,13 @@
                                 <div class="price-box mb-2">
                                     <span class="regular-price">Rp. {{ $product->price_product }}</span>
                                 </div>
+                                <div class="product-rating mb-3">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
                                 <p class="desc-content mb-5">{!! $product->description_product !!}</p>
                                 <div class="quantity-with_btn mb-5">
                                     <div class="quantity">
