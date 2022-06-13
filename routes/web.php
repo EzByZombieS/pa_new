@@ -26,8 +26,9 @@ Route::resource('product', ProductUserController::class);
 Route::get('/profile', [ProfileWebController::class, 'index'])->name('profile');
 Route::get('/critics', [CriticsUserController::class, 'index'])->name('critics');
 Route::get('/request', [RequestUserController::class, 'index'])->name('request');
+Route::post('/product/{product}/star', [ProductUserController::class, 'star'])->name('review.star');
 Route::post('/product/{product}/review', [ProductUserController::class, 'store'])->name('review.store');
-ROute::get('/aboutus', [AboutUsController::class, 'index'])->name('user.aboutus');
+Route::get('/aboutus', [AboutUsController::class, 'index'])->name('user.aboutus');
 
 
 Route::prefix('user/')->name('user.')->group(function(){

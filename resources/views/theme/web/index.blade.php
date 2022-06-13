@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @include('theme.web.head')
+@yield('css')
 <body>
 
 	<div id="preloader">

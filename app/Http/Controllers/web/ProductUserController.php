@@ -33,7 +33,6 @@ class ProductUserController extends Controller
     
     public function store(Request $request,$product)
     {
-        
         $validator = Validator::make($request->all(), [
             'review' => 'required',
         ]);
@@ -46,18 +45,12 @@ class ProductUserController extends Controller
                 ]);
             }
         }
-        // Review::save([
-        //     'id_user'=>Auth::user()->id,
-        //     'id_order'=>$product,
-        //     'review'=>$request->review,
-        //     'created_at'=>now(),
-        // ]);
         $review = new Review();
         $review->id_user = Auth::user()->id;
         $review->id_product = $product;
         $review->review = $request->review;
+        $review->rating = $request->stars;
         $review->created_at = now();
-        // dd($review);
         $review->save();
         return response()->json([
             'alert' => 'success',
@@ -88,4 +81,6 @@ class ProductUserController extends Controller
     {
         //
     }
+
+    
 }
