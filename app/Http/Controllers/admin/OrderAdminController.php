@@ -89,7 +89,7 @@ class OrderAdminController extends Controller
         
         
         
-        $phones = 81362926803;
+        $phones = $show[0]->phone;
         return redirect()->to('https://wa.me/62'.$phones.'?text=Pesanan Anda Telah Selesai!%0ABerikut Order Detail Pesanan Anda:%0A'.$url.'%0AAnda dapat mengambilnya segera!%0ATerimakasih ');
         
         // return response()->json([

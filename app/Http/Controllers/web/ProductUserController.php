@@ -16,7 +16,7 @@ class ProductUserController extends Controller
     {   
         if ($request->ajax()) {
             if($request->category != 'all'){
-                $collection = Product::where('status_product','=','Published')->where('id_product_category',$request->category)->orderby('id', 'desc')->paginate(12);
+                $collection = Product::where('status_product','=','Published')->where('id_product_category',$request->category)->orderby('total_rating', 'desc')->paginate(12);
             }else{
                 $collection = Product::where('status_product','=','Published')->orderby('id', 'desc')->paginate(12);
             }
@@ -52,6 +52,8 @@ class ProductUserController extends Controller
         $review->rating = $request->stars;
         $review->created_at = now();
         $review->save();
+        $total_rating = Review::where('id_product',$product)->avg('rating');
+        Product::where('id',$product)->update(['total_rating'=>$total_rating]);
         return response()->json([
             'alert' => 'success',
             'message' => 'Review Berhasil Ditambahkan'

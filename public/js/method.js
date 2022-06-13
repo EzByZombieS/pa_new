@@ -51,6 +51,15 @@ function load_list(page) {
     }, "html");
 }
 
+function load_list1(page) {
+    loading();
+    $.get('?page=' + page, $('#content_filter1').serialize(), function (result) {
+        $('#list_result').html(result);
+        main_content('content_list');
+        loaded();
+    }, "html");
+}
+
 function load_input(url) {
     loading();
     $.get(url, {}, function (result) {

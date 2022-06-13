@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('price_product');
             $table->longText('description_product');
             $table->string('status_product');
+            $table->float('total_rating')->nullable();
             $table->timestamps();
             $table->foreign('id_product_category')->references('id')->on('product_categories')->onDelete('CASCADE');
         });

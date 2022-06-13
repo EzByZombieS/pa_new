@@ -43,6 +43,7 @@
                                 </form>
                             </div>
                         </div>
+                        
                         <div id="list_result"></div>
                     </div>
                 </div>
@@ -53,6 +54,7 @@
     @section('custom_js')
     <script>
         load_list(1);
+        load_list1(1);
     </script>
     @endsection
 

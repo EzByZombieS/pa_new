@@ -29,6 +29,18 @@ class OrderController extends Controller
     
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+        'total' => 'required',
+        ]);
+        if($validator->fails()){
+            $errors = $validator->errors();
+            if($errors->has('total')){
+                return response()->json([
+                    'alert'=>'error',
+                    'message'=>'Barang harus ada'
+                ]);
+            }
+        }
         $huruf = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $random_huruf = Str::random(7, $huruf);
         $random_string = Auth::user()->id.$random_huruf.Str::of(Auth::user()->name)->replace(' ', '') ?: 0;

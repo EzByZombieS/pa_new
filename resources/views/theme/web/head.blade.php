@@ -49,9 +49,9 @@
       .rating {
   display: inline-block !important;
   position: relative !important;
-  height: 50px !important;
-  line-height: 50px !important;
-  font-size: 50px !important;
+  height: 25px !important;
+  line-height: 25px !important;
+  font-size: 25px !important;
   }
 
 .rating label {
