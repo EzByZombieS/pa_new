@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function index()
     {
         $collection = Product::where('status_product','=','Published')->orderby('id','desc')->paginate(10);
-        $sale = Product::where('status_product','=','Published')->orderby('id','asc')->paginate(10);
+        $sale = Product::select('products.id','products.name_product','products.id_product_category','products.image_product','reviews.id_product','reviews.rating')->join('reviews','reviews.id_product','=','products.id')->where('status_product','=','Published')->orderby('reviews.rating','desc')->paginate(10);
         return view('pages.web.home.main',compact('collection','sale'));
     }
 

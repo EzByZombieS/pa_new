@@ -15,7 +15,7 @@ class CartController extends Controller
     {
         if($request->ajax() ){
             if(Auth::check()):
-                $total = Cart::where('id_user', Auth::user()->id)->select('carts.*','products.*', DB::raw('SUM(products.price_product * carts.qty) AS result'))->leftJoin('products','products.id','=','carts.id_product')->groupBy('carts.id')->get()->toArray();
+                $total = Cart::where('id_user', Auth::user()->id)->select('carts.id','carts.id_product','carts.id_user','carts.qty','products.id','products.name_product','products.id_product_category','products.image_product','products.price_product', DB::raw('SUM(products.price_product * carts.qty) AS result'))->leftJoin('products','products.id','=','carts.id_product')->groupBy('carts.id','carts.id_product','carts.id_user','carts.qty','products.id','products.name_product','products.id_product_category','products.image_product','products.price_product')->get()->toArray();
                 $count = 0;
                 foreach($total as $value){
                     $count += $value['result'];
