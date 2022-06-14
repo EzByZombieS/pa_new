@@ -15,10 +15,10 @@ class ProductUserController extends Controller
     public function index(Request $request)
     {   
         if ($request->ajax()) {
-            if($request->category != 'all'){
-                $collection = Product::where('status_product','=','Published')->where('id_product_category',$request->category)->orderby('total_rating', 'desc')->paginate(12);
-            }else{
+            if($request->category == 'all'){
                 $collection = Product::where('status_product','=','Published')->orderby('id', 'desc')->paginate(12);
+            }else{
+                $collection = Product::where('status_product','=','Published')->where('id_product_category',$request->category)->orderby('total_rating', 'desc')->paginate(12);
             }
             return view('pages.web.myproduct.list',compact('collection'));
         }
