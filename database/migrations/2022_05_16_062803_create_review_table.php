@@ -20,7 +20,7 @@ class CreateReviewTable extends Migration
             $table->longtext('review')->nullable();
             $table->integer('rating')->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
-            $table->foreign('id_product')->references('id')->on('products')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+            $table->foreign('id_product')->references('id')->on('products')->onUpdate('NO ACTION')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

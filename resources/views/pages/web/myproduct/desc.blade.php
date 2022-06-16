@@ -46,7 +46,7 @@
                                     <h2 class="product-title">{{ $product->name_product }}</h2>
                                 </div>
                                 <div class="price-box mb-2">
-                                    <span class="regular-price">Rp. {{ $product->price_product }}</span>
+                                    <span class="regular-price">Rp. {{ number_format($product->price_product,2,',','.') }}</span>
                                 </div>
                                 @php
                                     $rating = \App\Models\Review::where('id_product', $product->id)->avg('rating');

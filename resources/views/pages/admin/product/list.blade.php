@@ -30,7 +30,7 @@
                     <span class="fw-bolder text-dark">{{ $item->product->name_product_category }}</span>
                 </td>
                 <td class="text-end pe-0">
-                    <span class="fw-bolder text-dark">Rp. {{ $item->price_product }}</span>
+                    <span class="fw-bolder text-dark">Rp. {{ number_format($item->price_product,2,',','.') }}</span>
                 </td>
                 <td class="text-end pe-0" data-order="{{ $item->status_product }}">
                     @if($item->status_product == 'Published')

@@ -97,7 +97,7 @@
                                         @endif
                                         </section>
                                         <div class="price-box">
-											<span class="regular-price ">Rp. {{ $item->price_product }}</span>
+											<span class="regular-price ">Rp. {{ number_format($item->price_product,2,',','.') }}</span>
                                         </div>
                                         <a href="{{ route('product.show',$item->id) }}" title="Quick View" class="btn product-cart">View...</a>
                                     </div>
@@ -185,7 +185,7 @@
                                         @endif
                                         </section>
                                         <div class="price-box">
-											<span class="regular-price ">Rp. {{ $item->price_product }}</span>
+											<span class="regular-price ">Rp. {{ number_format($item->price_product,2,',','.') }}</span>
                                         </div>
                                         <a href="{{ route('product.show',$item->id) }}" title="Quick View" class="btn product-cart">View...</a>
                                     </div>

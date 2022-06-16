@@ -17,7 +17,7 @@ class HomeController extends Controller
         $sale = Product::select('products.id', 'products.total_rating', 'products.price_product','products.name_product','products.id_product_category','products.image_product')
         ->where('status_product','=','Published')
         ->orderBy('products.total_rating','desc')
-        ->paginate(10);
+        ->paginate(8);
 
 
         return view('pages.web.home.main',compact('collection','sale'));

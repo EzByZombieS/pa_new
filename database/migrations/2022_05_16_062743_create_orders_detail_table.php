@@ -20,7 +20,7 @@ class CreateOrdersDetailTable extends Migration
             $table->string('qty');
             $table->string('total_price');
             $table->foreign('id_order')->references('id')->on('orders')->onUpdate('CASCADE')->onDelete('CASCADE');
-            $table->foreign('id_product')->references('id')->on('products')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('id_product')->references('id')->on('products')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
