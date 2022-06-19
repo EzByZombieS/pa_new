@@ -33,13 +33,15 @@
                                 @endphp
                                 <form class="d-flex flex-column w-100" id="content_filter">
                                     <div class="form-group">
-                                        <select class="form-control nice-select w-100" onchange="load_list();" name="category">
-                                            <option selected value="all">All Category</option>
+                                        <select class="form-control nice-select w-100" name="category">
+                                            <option></option>
                                             @foreach ($categories as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name_product_category }}</option>
+                                                <option value="{{ $item->id }}">{{ $item->name_product_category }}</option>
                                             @endforeach
                                         </select>
                                     </div>
+                                    <input type="text" id="content_filter"  class="form-control form-control-solid w-250px ps-14" placeholder="Search Product" name="keywords"/>
+                                    <button type="button" onclick="load_list(1);" class="btn btn-sm" data-kt-menu-dismiss="true">Apply</button>
                                 </form>
                             </div>
                         </div>
